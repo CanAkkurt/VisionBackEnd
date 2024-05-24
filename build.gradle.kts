@@ -20,6 +20,7 @@ dependencies {
     implementation("org.projectlombok:lombok:1.18.22")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("commons-net:commons-net:3.7.2")
+    implementation("org.jboss.logging:jboss-logging:3.5.3.Final")
     implementation("com.mysql:mysql-connector-j:8.0.33")
     implementation("com.microsoft.sqlserver:mssql-jdbc:12.2.0.jre11")
     testImplementation("org.springframework.boot:spring-boot-starter-test")

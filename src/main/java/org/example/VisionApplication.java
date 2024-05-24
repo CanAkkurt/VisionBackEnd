@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableScheduling
 public class VisionApplication {
-
+    //start
     public static void main(String[] args) {
         SpringApplication.run(VisionApplication.class, args);
     }

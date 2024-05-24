@@ -1,31 +1,39 @@
-package org.example.domain;
+package org.example.domain.dto;
 
-import jakarta.persistence.*;
 
-@Entity
-public class Image {
+import jakarta.persistence.Lob;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Data
+@Builder
+@NoArgsConstructor
+public class ImageResponse {
+
+    public ImageResponse(){}
     private Long id;
 
     private String fileName;
 
     private String contentType;
-    @Lob
     private String detectionResult;
-    @Lob
     private byte[] data;// URL where the actual image is stored
 
-    // Constructors, getters, and setters
-    public Image() {
+
+    public ImageResponse(Long id,String fileName,String detectionResult){
+        this.id = id;
+        this.fileName = fileName;
+        this.detectionResult = detectionResult;
+
     }
 
-    public Image(String fileName, String contentType, byte[] data,String detectionResult) {
+    public ImageResponse(Long id,String fileName,String detectionResult, byte[] data){
+        this.id = id;
         this.fileName = fileName;
-        this.contentType = contentType;
-        this.data = data;
         this.detectionResult = detectionResult;
+        this.data = data;
+
     }
 
     public Long getId() {
@@ -67,6 +75,4 @@ public class Image {
     public void setData(byte[] data) {
         this.data = data;
     }
-
-    // getters and setters
 }
